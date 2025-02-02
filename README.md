@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Inventory Mnagement System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The web based application that provide an efficient solution to manage products, stock , categories and orders providing insights into stock trends and order patterns. This system enhances operational efficiency and ensuress seamless inventory tracking for business
 
-## Available Scripts
 
-In the project directory, you can run:
+## Features
+- Dashboard to provide overall summary
+- Alerts for low stock products, out of stock products and pending orders
+- View list of all Products, orders
+- Add new Product
+- Add new order with multiple items
+- Tracks order status
+- Inventory logs for tracking and maintaing detailed record of inventory related activities
+- View details of user
+- User can change password after logging in
+- Charts to Analyze Stock trends and order trends
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend** : React.js, Material-UI
+- **Backend**:Django Rest Framework(DRF)
+- **Other_Tools**: AXIOS for API calls
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
+- Node.js(v14 or higher)
+- npm(Node package Manager)
+- Python (v3.6 or higher)
+- Django (v3.2 or higher)
+- Django Rest FRamework
 
-### `npm test`
+## steps to run  project
+##### For running backend
+1.clone the repository:
+```
+git clone "https://github.com/zoyamariam2001/Inventory_Management_System.git"
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2.Move to directory
+```
+cd Inventory-management/inventory_management
+```
 
-### `npm run build`
+3.Install Packages
+```
+python -m pip install -r requirements.txt
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4.Make migrations
+```
+python manage.py makemigrations
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4.Migrate
+```
+python manage.py migrate
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3.Run the server in 8198 port
+```
+python manage.py runserver 8198
+```
+##### For Frontend
+4.Move to directory
+```
+cd frontend
+```
+5.Install npm
+```
+npm i
+```
+6.Run npm
+```
+npm start
+```
