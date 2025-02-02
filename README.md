@@ -15,6 +15,52 @@ The web based application that provide an efficient solution to manage products,
 - User can change password after logging in
 - Charts to Analyze Stock trends and order trends
 
+## Database Design
+### CustomUser
+#### Attributes
+- business_name
+- phone_number
+
+### Category
+#### Attributes
+- name
+
+### Product
+#### Attributes
+- name
+- category
+- description
+- stock_quantity
+- threshold
+- created_by
+- image
+- created_at
+- updated_at
+
+### InventoryLog
+#### Attributes
+- Product
+- user
+- quantity
+- created_at
+
+### Order
+#### Attributes
+- user
+- customer_name
+- customer_phone_number
+- total_price
+- created_at
+- updated_at
+
+### OrderItem
+#### Attributes
+- Order
+- Product
+- Quantity
+
+
+
 ## Tech Stack
 
 - **Frontend** : React.js, Material-UI
