@@ -1,19 +1,18 @@
 # Inventory Mnagement System
 
-The web based application that provide an efficient solution to manage products, stock , categories and orders providing insights into stock trends and order patterns. This system enhances operational efficiency and ensuress seamless inventory tracking for business
+## **Overview**
+This is a full-stack **Inventory Management System** designed for small businesses.It provides an efficient solution to manage products, stock , categories and orders providing insights into stock trends and order patterns. This system enhances operational efficiency and ensuress seamless inventory tracking for business
 
 
-## Features
-- Dashboard to provide overall summary
-- Alerts for low stock products, out of stock products and pending orders
-- View list of all Products, orders
-- Add new Product
-- Add new order with multiple items
-- Tracks order status
-- Inventory logs for tracking and maintaing detailed record of inventory related activities
-- View details of user
-- User can change password after logging in
-- Charts to Analyze Stock trends and order trends
+## **Features**
+- **User Authentication** (JWT-based login & registration)
+- **Dashboard** with inventory summaries & pending orders
+- **Products Management** (Add, View, Edit, Delete, Search)
+- **Orders Management** (Create, View, Update Status, Delete, Search)
+- **Inventory Logs** (Track all inventory changes)
+- **Graphical Insights** using charts
+- **Image Upload** for products
+
 
 ## Database Design
 ### CustomUser
@@ -65,7 +64,9 @@ The web based application that provide an efficient solution to manage products,
 
 - **Frontend** : React.js, Material-UI
 - **Backend**:Django Rest Framework(DRF)
-- **Other_Tools**: AXIOS for API calls
+-  **Database:** SQLite.
+- **Security:** Uses JWT tokens for authentication and CORS policies for API access.
+- **Other_Tools**: AXIOS for API calls, Recharts for data visualization
 
 ## Prerequisites
 - Node.js(v14 or higher)
@@ -73,6 +74,43 @@ The web based application that provide an efficient solution to manage products,
 - Python (v3.6 or higher)
 - Django (v3.2 or higher)
 - Django Rest FRamework
+
+## **Project Structure**
+
+```bash
+Inventory-management/
+├── inventory_management/
+│   ├── inventory/        # Core business logic & models
+│   │   ├── admin.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── urls.py
+│   │   ├── views.py
+│   ├── inventory_management/
+│   │   ├── settings.py       # Django project settings
+│   │   ├── urls.py           # API Routing
+│   └── requirements.txt         # Requirements File
+│
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   ├── src/
+│   │   ├── components/   # React Components
+│   │   │   ├── Dashboard.js
+│   │   │   ├── Graphs.js
+│   │   │   ├── InventoryLog.js
+│   │   │   ├── Login.js
+│   │   │   ├── Navbar.js   # Navigation Bar
+│   │   │   ├── Orders.js
+│   │   │   ├── PrivateRoute.js
+│   │   │   ├── Products.js
+│   │   │   ├── Profile.js
+│   │   │   ├── Register.js
+│   │   ├── App.js        # Main React App
+│   │   ├── index.js      # React Entry Point
+│   ├── package.json
+└── README.md            # Project Documentation
+```
 
 ## steps to run  project
 ##### For running backend
@@ -128,68 +166,19 @@ npm start
 
 
 
-# **Inventory Management System for Small Businesses**
 
-## **Overview**
-This is a full-stack **Inventory Management System** designed for small businesses. It helps businesses efficiently track inventory, manage orders, and analyze data with an intuitive user interface.
 
-## **Features**
-- **User Authentication** (JWT-based login & registration)
-- **Dashboard** with inventory summaries & pending orders
-- **Products Management** (Add, View, Edit, Delete, Search)
-- **Orders Management** (Create, View, Update Status, Delete, Search)
-- **Inventory Logs** (Track all inventory changes)
-- **Graphical Insights** using charts
-- **Image Upload** for products
+
+
+
+
+
 
 ---
 
-## **Design Decisions**
-- **Backend:** Django REST Framework (DRF) for APIs, with JWT authentication.
-- **Frontend:** ReactJS with Material UI for a modern user interface.
-- **Database:** SQLite.
-- **Security:** Uses JWT tokens for authentication and CORS policies for API access.
 
----
 
-## **Project Structure**
 
-```bash
-Inventory-management/
-├── inventory_management/
-│   ├── inventory/        # Core business logic & models
-│   │   ├── admin.py
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── urls.py
-│   │   ├── views.py
-│   ├── inventory_management/
-│   │   ├── settings.py       # Django project settings
-│   │   ├── urls.py           # API Routing
-│   └── requirements.txt         # Requirements File
-│
-├── frontend/
-│   ├── public/
-│   │   ├── index.html
-│   ├── src/
-│   │   ├── components/   # React Components
-│   │   │   ├── Dashboard.js
-│   │   │   ├── Graphs.js
-│   │   │   ├── InventoryLog.js
-│   │   │   ├── Login.js
-│   │   │   ├── Navbar.js   # Navigation Bar
-│   │   │   ├── Orders.js
-│   │   │   ├── PrivateRoute.js
-│   │   │   ├── Products.js
-│   │   │   ├── Profile.js
-│   │   │   ├── Register.js
-│   │   ├── App.js        # Main React App
-│   │   ├── index.js      # React Entry Point
-│   ├── package.json
-└── README.md            # Project Documentation
-```
-
----
 
 ## **Project Setup**
 
@@ -264,21 +253,49 @@ npm start
 | GET | `/api/profile/` | Get details of user |
 | PATCH | `/api/change_password/` | Change password of user |
 
----
-
-## **Tech Stack**
-
-### **Frontend:**
-- **ReactJS** (Material UI for design)
-- **Axios** for API calls
-- **Recharts** for data visualization
-
-### **Backend:**
-- **Django REST Framework** (DRF)
-- **SQLite**
-- **JWT Authentication** (SimpleJWT)
+### **Graph Trends API**
+| Method | Endpoint | Description |
+|--------|----------------------|--------------------------------|
+| GET | `/api/get/trends/` | Get trends of stock according to date |
+| PATCH | `/api/get/order_trends/` | Get trends of order according to month |
 
 ---
+
+### Components
+
+#### 1. **Dashboard**
+- **Description:** Displays the main dashboard for the application. This typically includes key metrics and summaries relevant to the business activities.
+
+#### 2. **Graphs**
+- **Description:** Visual representation to compare insights and other useful insights.
+
+#### 3. **InventoryLog**
+- **Description:** Shows a log for addition and removal of stocks along with updation and deletion features.
+
+#### 4. **Login**
+- **Description:** Allows logging in for a user with valid username and password.
+
+#### 5. **Navbar**
+- **Description:** The navigation bar for the application. Provides links to different sections and is typically displayed at the top of the page.
+
+#### 6. **Orders**
+- **Description:** User can Create a new order with multiple items and even view list of all orders, change status of order and delete orders
+
+#### 7. **PrivateRoute**
+- **Description:** This component is used to protect specific routes in application by restricting access to authenticated users only
+
+#### 8. **Products**
+- **Description:** User can  add a new product along with its image, update the product view product details and delete the product.
+
+#### 9. **Profile**
+- **Description:** Displays the profile of user. This also includes changing password for more security.
+
+#### 10. **Register**
+- **Description:** Allows registration of new user who don't have an account.
+
+
+
+
 
 ## **Contributors**
 - **Zoya Patel** - Developer
