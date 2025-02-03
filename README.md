@@ -14,18 +14,18 @@ This is a full-stack **Inventory Management System** designed for small business
 - **Image Upload** for products
 
 
-## Database Design
-### CustomUser
-#### Attributes
+## **Database Design**
+### **CustomUser**
+#### **Attributes**
 - business_name
 - phone_number
 
-### Category
-#### Attributes
+### **Category**
+#### **Attributes**
 - name
 
-### Product
-#### Attributes
+### **Product**
+#### **Attributes**
 - name
 - category
 - description
@@ -36,15 +36,15 @@ This is a full-stack **Inventory Management System** designed for small business
 - created_at
 - updated_at
 
-### InventoryLog
-#### Attributes
+### **InventoryLog**
+#### **Attributes**
 - Product
 - user
 - quantity
 - created_at
 
-### Order
-#### Attributes
+### **Order**
+#### **Attributes**
 - user
 - customer_name
 - customer_phone_number
@@ -52,15 +52,15 @@ This is a full-stack **Inventory Management System** designed for small business
 - created_at
 - updated_at
 
-### OrderItem
-#### Attributes
+### **OrderItem**
+#### **Attributes**
 - Order
 - Product
 - Quantity
 
 
 
-## Tech Stack
+## **Tech Stack**
 
 - **Frontend** : React.js, Material-UI
 - **Backend**:Django Rest Framework(DRF)
@@ -68,7 +68,7 @@ This is a full-stack **Inventory Management System** designed for small business
 - **Security:** Uses JWT tokens for authentication and CORS policies for API access.
 - **Other_Tools**: AXIOS for API calls, Recharts for data visualization
 
-## Prerequisites
+## **Prerequisites**
 - Node.js(v14 or higher)
 - npm(Node package Manager)
 - Python (v3.6 or higher)
@@ -261,7 +261,7 @@ npm start
 
 ---
 
-### Components
+### **Components**
 
 #### 1. **Dashboard**
 - **Description:** Displays the main dashboard for the application. This typically includes key metrics and summaries relevant to the business activities.
@@ -293,29 +293,29 @@ npm start
 #### 10. **Register**
 - **Description:** Allows registration of new user who don't have an account.
 
-## Overview of website
-### Login page
+## **Overview of website**
+### **Login page**
 ![Login Page](./images/login.png)
 
-### Dashboard page
+### **Dashboard page**
 ![Dashboard Page](./images/new_dashboard.png)
 ![Alert Page](./images/alert.png)
 
-### Products page
+### **Products page**
 ![newproductPage](./images/new_product.png)
 ![existingproduct Page](./images/existing_product.png)
 
-### InventoryLog page
+### **InventoryLog page**
 ![Login Page](./images/inventory_log.png)
 
-### Orders page
+### **Orders page**
 ![neworderPage](./images/new_order.png)
 ![existing Page](./images/existing_order.png)
 
-### Graphs page
+### **Graphs page**
 ![graphs Page](./images/new_graph.png)
 
-### Profile page
+### **Profile page**
 ![profile Page](./images/profile.png)
 
 
