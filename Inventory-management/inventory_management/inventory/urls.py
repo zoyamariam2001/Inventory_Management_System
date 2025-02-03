@@ -8,9 +8,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-
 urlpatterns = [
-    #for login purpose
+    #for user
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/register/',register_user, name='register_user'),
@@ -48,8 +47,6 @@ urlpatterns = [
    path('api/get/graph', get_category_stock_data, name='get_category_stock_data'),
    path('api/get/trends', get_stock_trends, name='get_stock_trends'),
    path('api/get/order_trends', get_order_trend_month, name='get_order_trend_month'),
-
-
 
 ]
 

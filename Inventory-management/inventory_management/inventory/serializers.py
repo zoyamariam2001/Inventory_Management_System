@@ -1,33 +1,5 @@
 from rest_framework import serializers
-#from django.contrib.auth.models import User
 from .models import Category, Product, InventoryLog, Order, CustomUser, OrderItem
-
-# User Serializer
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'email', 'password']
-
-
-# class UserSerializer(serializers.ModelSerializer):
-#     password = serializers.CharField(write_only=True)
-
-#     class Meta:
-#         model = User
-#         fields = ['id', 'username', 'email', 'password']
-#         extra_kwargs = {
-#             'password': {'write_only': True}  # Ensures password is not returned in responses
-#         }
-
-#     def create(self, validated_data):
-#         # Use `create_user` to ensure the password is hashed before saving
-#         user = User.objects.create_user(
-#             #name=validated_data['name'],
-#             username=validated_data['username'],
-#             email=validated_data['email'],
-#             password=validated_data['password']
-#         )
-#         return user
 
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -46,34 +18,15 @@ class UserSerializer(serializers.ModelSerializer):
         )
         return user
 
+
 # Category Serializer
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = ['id', 'name']
 
+
 # Product Serializer
-# class ProductSerializer(serializers.ModelSerializer):
-#     category_name = serializers.ReadOnlyField(source='category.name')
-
-#     class Meta:
-#         model = Product
-#         fields = [
-#             'id',
-#             'name',
-#             'category',
-#             'category_name',
-#             'description',
-#             'price',
-#             'stock_quantity',
-#             'threshold',
-#             'created_at',
-#             'updated_at',
-#             'created_by',
-            
-#         ]
-
-
 class ProductSerializer(serializers.ModelSerializer):
     image_url = serializers.SerializerMethodField()  # For serving full image URL
     #created_by_username=serializers.ReadOnlyField(source='created_by.username')
@@ -105,7 +58,6 @@ class InventoryLogSerializer(serializers.ModelSerializer):
             return f"-{obj.quantity}"
         return obj.quantity
             
-
     class Meta:
         model = InventoryLog
         fields = [
@@ -119,30 +71,6 @@ class InventoryLogSerializer(serializers.ModelSerializer):
             'created_at'
         ]
     
-
-# # Order Serializer
-# class OrderSerializer(serializers.ModelSerializer):
-#     product_name = serializers.ReadOnlyField(source='product.name')
-#     user_username = serializers.ReadOnlyField(source='user.username')
-
-#     class Meta:
-#         model = Order
-#         fields = [
-#             'id',
-#             #'product',
-#             'product_name',
-#             #'user',
-#             'customer_name',
-#             'customer_address',
-#             'customer_phone_number',
-#             'user_username',
-#             'quantity',
-#             #'total_price',
-#             'created_at',
-#             'updated_at',
-#             'status'
-#         ]
-
 
 class OrderItemSerializer(serializers.ModelSerializer):
     product_name = serializers.ReadOnlyField(source='product.name')
@@ -166,9 +94,6 @@ class OrderSerializer(serializers.ModelSerializer):
             'status',
             'items',
         ]
-
-
-
 
 
 class ChangePasswordSerializer(serializers.Serializer):
