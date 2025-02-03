@@ -1,4 +1,4 @@
-# Inventory Mnagement System
+# Inventory Management System
 
 ## **Overview**
 This is a full-stack **Inventory Management System** designed for small businesses.It provides an efficient solution to manage products, stock , categories and orders providing insights into stock trends and order patterns. This system enhances operational efficiency and ensuress seamless inventory tracking for business
@@ -293,7 +293,30 @@ npm start
 #### 10. **Register**
 - **Description:** Allows registration of new user who don't have an account.
 
+## Overview of website
+### Login page
+![Login Page](./images/login.png)
 
+### Dashboard page
+![Dashboard Page](./images/new_dashboard.png)
+![Alert Page](./images/alert.png)
+
+### Products page
+![newproductPage](./images/new_product.png)
+![existingproduct Page](./images/existing_product.png)
+
+### InventoryLog page
+![Login Page](./images/inventory_log.png)
+
+### Orders page
+![neworderPage](./images/new_order.png)
+![existing Page](./images/existing_order.png)
+
+### Graphs page
+![graphs Page](./images/new_graph.png)
+
+### Profile page
+![profile Page](./images/profile.png)
 
 
 
